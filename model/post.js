@@ -1,37 +1,20 @@
 module.exports = {
 
-    posts : [
-        {
-            id:"ksasaskaska",
-            title:"Meu mural",
-            description : "Descrição teste"
-        } , 
-
-        {
-            id:"123",
-            title:"Mural a ser deletado",
-            description : "Descrição teste"
-        } , 
-
-        {
-            id:"456",
-            title:"Meu mural",
-            description : "Descrição teste"
-        } , 
-    ],
+    posts : [],
 
     getAll() {
+        console.log(this.posts);
         return this.posts
     },
 
     newPost(title , description) {
         this.posts.push({id: generateID() , title , description});
-    } ,
+    },
 
     deletePost (id) {
         for(let i = 0;i < this.posts.length ; i++) {
             if(this.posts[i].id == id) {
-                this.posts.splice(this.posts[i] , 1);           
+                this.posts.splice(i , 1);          
             }
         }
     }

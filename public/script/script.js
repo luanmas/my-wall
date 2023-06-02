@@ -21,6 +21,9 @@ function updatePosts() {
                 <div class="card-body">
                     <div class="card-text">${post.description}</div>
                 </div>
+                <div class="card-body">
+                    <div class="card-text">ID : ${post.id}</div>
+                </div>
             </div>
             `;
 
@@ -48,8 +51,8 @@ function newPost() {
     fetch("http://192.168.18.9:3000/api/new" , options).then(res => {
         console.log(res);
         updatePosts();
-        document.getElementById("title").value = ""
-        document.getElementById("desc").value = ""
+        document.getElementById("title").value = "";
+        document.getElementById("desc").value = "";
     })
     
 }
